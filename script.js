@@ -6,30 +6,43 @@ $(document).ready(function(){
    var start_date = '2018-01-01';
    console.log(start_date);
    var start_moment = moment(start_date);
+   var firstMonth = 'January';
+   var lastMonth = 'December';
 
-   current_month(start_moment);
+   current_month(start_moment, firstMonth , lastMonth);
    holidays(start_moment);
-
 
   $("#prev-month").click(function(){
     start_moment.subtract(1,'months');
-    current_month(start_moment);
+    current_month(start_moment, firstMonth , lastMonth);
     holidays(start_moment);
   }); // end click next month
 
   $("#next-month").click(function(){
     start_moment.add(1,'months');
-    current_month(start_moment);
+    current_month(start_moment, firstMonth , lastMonth);
     holidays(start_moment);
   }); // end click next month
 
 
-  function current_month(day_month){
+  function current_month(day_month, a, b){
     $("#calendar").empty();
     var monthDays = day_month.daysInMonth();
     var monthTransformed = day_month.format('MMMM');
 
     $("#monthCurr").text(monthTransformed);
+
+    var start = a;
+    var end = b;
+
+    if(monthTransformed == start){
+      $("#prev-month").prop("disabled" , true);
+    } else if (monthTransformed == end) {
+      $("#next-month").prop("disabled" , true);
+    } else {
+      $("#prev-month").prop("disabled" , false);
+      $("#next-month").prop("disabled" , false);
+    }
 
     for (var i = 1; i <= monthDays; i++) {
       var placehoder = {
