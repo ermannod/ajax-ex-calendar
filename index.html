@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <header class="flex-wrapper">
+        <h1><span id="monthCurr"></span> 2018</h1>
+        <div class="">
+          <button id="prev-month" type="button" name="button"><i class="fas fa-chevron-left"></i> Previous</button>
+          <button id="next-month" type="button" name="button">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+      </header>
+      <!-- Main -->
+      <ul id="calendar" class="flex-wrapper">
+
+      </ul>
+      <!-- End main -->
+    </div>
+    <script id="day-template" type="text/x-handlebars-template">
+      <li data-day="{{ day_key }}"> {{ day }} </li>
+    </script>
+  </body>
+</html>
