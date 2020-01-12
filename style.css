@@ -21,11 +21,26 @@ button{
   padding: 4px 8px;
 }
 
-#calendar{
- align-items: center;
- flex-direction: column;
+main{
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+  height: calc( 100vh - 100px);
 }
 
 .red{
   color: red;
+}
+
+ul {
+  list-style-type: none;
+  width: 700px;
+}
+
+li{
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  float: left;
 }
